@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Link Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="max-w-sm w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        
+        <div class="h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+
+        <div class="px-6 py-8 text-center">
+            <div class="relative -mt-16 mb-4">
+                <img class="w-24 h-24 rounded-full border-4 border-white mx-auto shadow-md" 
+                     src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" 
+                     alt="Random Avatar">
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-800">Project Alpha</h1>
+            <p class="text-sm text-gray-500 mb-6">Status: <span class="text-green-500 font-semibold">Active</span></p>
+
+            <div class="space-y-4 text-left">
+                <div class="p-3 bg-gray-50 rounded-lg">
+                    <p class="text-xs text-gray-400 uppercase font-bold">Location</p>
+                    <p class="text-gray-700">Sector 7-G, Digital Space</p>
+                </div>
+
+                <div class="p-3 bg-gray-50 rounded-lg">
+                    <p class="text-xs text-gray-400 uppercase font-bold">Last Updated</p>
+                    <p class="text-gray-700">January 2026</p>
+                </div>
+
+                <div class="p-3 bg-gray-50 rounded-lg">
+                    <p class="text-xs text-gray-400 uppercase font-bold">Project ID</p>
+                    <p class="text-gray-700 font-mono text-sm">#QR-8829-XP</p>
+                </div>
+            </div>
+
+            <button onclick="window.location.reload()" class="mt-8 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">
+                Refresh Data
+            </button>
+        </div>
+
+        <div class="pb-6 text-center">
+            <p class="text-xs text-gray-400 italic">This page is hosted permanently on GitHub Pages.</p>
+        </div>
+    </div>
+
+</body>
+</html>
