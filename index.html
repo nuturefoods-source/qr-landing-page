@@ -1,747 +1,104 @@
-
-
-Skip to content
-Using Gmail with screen readers
-Conversations
-0% of 2,048 GB used
-Terms · Privacy · Programme Policies
-Last account activity: 7 minutes ago
-Details
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Bhagwa Pomegranate - Humbal Farm</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #2d1b2e 0%, #1a0f1c 100%);
-            min-height: 100vh;
-            padding: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Premium Hero Section */
-        .hero {
-            position: relative;
-            height: 450px;
-            background: linear-gradient(135deg, #8B0000 0%, #C41E3A 50%, #DC143C 100%);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 40%, rgba(255,215,0,0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            animation: shimmer 6s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.4; }
-            50% { opacity: 0.8; }
-        }
-
-        .premium-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 215, 0, 0.95);
-            color: #8B0000;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-            z-index: 3;
-        }
-
-        .hero-icon {
-            font-size: 90px;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-15px) scale(1.05); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .variety-tag {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 40px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.4);
-            letter-spacing: 0.5px;
-        }
-
-        .hero-subtitle {
-            font-size: 17px;
-            font-weight: 300;
-            opacity: 0.95;
-            margin-bottom: 8px;
-        }
-
-        .hero-location {
-            font-size: 14px;
-            opacity: 0.9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .wave {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='%23ffffff'%3E%3C/path%3E%3C/svg%3E") no-repeat;
-            background-size: cover;
-        }
-
-        /* Freshness Banner */
-        .freshness-banner {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            padding: 20px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
-        }
-
-        .fresh-icon {
-            font-size: 36px;
-        }
-
-        .fresh-content h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 3px;
-        }
-
-        .fresh-content p {
-            font-size: 13px;
-            opacity: 0.95;
-        }
-
-        /* Quality Highlights */
-        .quality-section {
-            padding: 40px 25px;
-            background: linear-gradient(135deg, #fff9f0 0%, #ffe8e8 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: 900;
-            color: #8B0000;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .quality-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .quality-card {
-            background: white;
-            border-radius: 20px;
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(139, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .quality-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.2);
-            border-color: #DC143C;
-        }
-
-        .quality-icon {
-            font-size: 42px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .quality-title {
-            font-size: 16px;
-            font-weight: 800;
-            color: #8B0000;
-            margin-bottom: 6px;
-        }
-
-        .quality-desc {
-            font-size: 12px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Farmer Connection */
-        .farmer-section {
-            padding: 40px 25px;
-            background: white;
-        }
-
-        .farmer-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .farmer-card::before {
-            content: '🌾';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 150px;
-            opacity: 0.05;
-        }
-
-        .farmer-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .farmer-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 8px 20px rgba(139, 0, 0, 0.3);
-        }
-
-        .farmer-info h3 {
-            font-size: 22px;
-            color: #333;
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .farmer-info p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .farmer-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .farmer-stat {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-radius: 12px;
-        }
-
-        .farmer-stat-number {
-            font-size: 28px;
-            font-weight: 900;
-            color: #8B0000;
-            display: block;
-        }
-
-        .farmer-stat-label {
-            font-size: 11px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-
-        /* Harvest Timeline */
-        .timeline-section {
-            padding: 40px 25px;
-            background: #f8f9fa;
-        }
-
-        .timeline-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
-            position: relative;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 23px;
-            top: 50px;
-            width: 2px;
-            height: calc(100% - 20px);
-            background: linear-gradient(180deg, #DC143C 0%, #FFE8E8 100%);
-        }
-
-        .timeline-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
-        }
-
-        .timeline-content h4 {
-            font-size: 17px;
-            color: #333;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-
-        .timeline-content p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .timeline-date {
-            font-size: 11px;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        /* Sustainability */
-        .sustainability-section {
-            padding: 40px 25px;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-        }
-
-        .sustainability-card {
-            background: white;
-            border-radius: 24px;
-            padding: 35px 30px;
-            box-shadow: 0 10px 40px rgba(40, 167, 69, 0.15);
-            text-align: center;
-        }
-
-        .sustainability-icon {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        .sustainability-card h3 {
-            font-size: 24px;
-            color: #2e7d32;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-
-        .sustainability-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .feature-tag {
-            background: #e8f5e9;
-            color: #2e7d32;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            border: 2px solid #c8e6c9;
-        }
-
-        /* Nutritional Benefits */
-        .benefits-section {
-            padding: 40px 25px;
-            background: white;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 20px 15px;
-            background: linear-gradient(135deg, #fff9f0 0%, #ffe8e8 100%);
-            border-radius: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: scale(1.05);
-        }
-
-        .benefit-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .benefit-label {
-            font-size: 11px;
-            color: #666;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-
-        /* Trust Footer */
-        .trust-footer {
-            padding: 40px 25px;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .trust-logo {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .trust-footer h3 {
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-
-        .trust-footer p {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .certification-badges {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .cert-badge {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, #8B0000 0%, #DC143C 100%);
-            margin: 25px auto;
-        }
-
-        .footer-support {
-            font-size: 12px;
-            opacity: 0.6;
-            margin-top: 20px;
-        }
-
-        .footer-support strong {
-            color: #DC143C;
-            opacity: 1;
-        }
-
-        /* Responsive */
-        @media (max-width: 480px) {
-            .hero {
-                height: 400px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero-icon {
-                font-size: 70px;
-            }
-
-            .quality-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .section-title {
-                font-size: 24px;
-            }
-        }
-    </style>
+    <title>Farmer Profile | Shankarbhai Humbal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <!-- Premium Hero -->
-        <div class="hero">
-            <div class="premium-badge">Premium Grade</div>
-            <div class="hero-icon">🔴</div>
-            <div class="hero-content">
-                <div class="variety-tag">Bhagwa Variety</div>
-                <h1>Humbal Farm</h1>
-                <div class="hero-subtitle">Hand-Selected Premium Pomegranates</div>
-                <div class="hero-location">📍 Kutch, Gujarat</div>
-            </div>
-            <div class="wave"></div>
-        </div>
+<body class="bg-stone-50 text-slate-800 font-sans leading-relaxed">
 
-        <!-- Freshness Guarantee -->
-        <div class="freshness-banner">
-            <div class="fresh-icon">✨</div>
-            <div class="fresh-content">
-                <h3>Farm Fresh Guarantee</h3>
-                <p>Harvested March 16, 2025 • Direct from Farm</p>
-            </div>
-        </div>
+    <div class="relative h-64 bg-green-800">
+        <div class="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-stone-50"></div>
+    </div>
 
-        <!-- Quality Highlights -->
-        <div class="quality-section">
-            <div class="section-title">Why Choose Us</div>
-            <div class="section-subtitle">Premium quality you can taste</div>
-            <div class="quality-grid">
-                <div class="quality-card">
-                    <span class="quality-icon">🏆</span>
-                    <div class="quality-title">Premium Grade</div>
-                    <div class="quality-desc">Top-quality Bhagwa variety pomegranates</div>
-                </div>
-                <div class="quality-card">
-                    <span class="quality-icon">🌿</span>
-                    <div class="quality-title">100% Natural</div>
-                    <div class="quality-desc">No harmful chemicals or pesticides</div>
-                </div>
-                <div class="quality-card">
-                    <span class="quality-icon">💧</span>
-                    <div class="quality-title">Rich & Juicy</div>
-                    <div class="quality-desc">Optimal water for perfect sweetness</div>
-                </div>
-                <div class="quality-card">
-                    <span class="quality-icon">✅</span>
-                    <div class="quality-title">Fully Traceable</div>
-                    <div class="quality-desc">Complete farm-to-table transparency</div>
-                </div>
+    <div class="max-w-md mx-auto px-4 -mt-32 relative z-10 pb-12">
+        
+        <div class="bg-white rounded-3xl shadow-xl p-6 text-center mb-6">
+            <div class="inline-block relative">
+                <img src="https://i.imgur.com/your_image_placeholder.jpg" alt="Shankarbhai Humbal" class="w-32 h-32 rounded-2xl border-4 border-white shadow-lg object-cover mx-auto bg-gray-200">
+                <span class="absolute bottom-2 right-2 bg-green-500 w-5 h-5 rounded-full border-2 border-white"></span>
             </div>
-        </div>
-
-        <!-- Farmer Story -->
-        <div class="farmer-section">
-            <div class="section-title">Know Your Farmer</div>
-            <div class="section-subtitle">Every fruit has a story</div>
-            <div class="farmer-card">
-                <div class="farmer-header">
-                    <div class="farmer-avatar">👨‍🌾</div>
-                    <div class="farmer-info">
-                        <h3>Shankarbhai Humbal</h3>
-                        <p>Third-generation pomegranate farmer</p>
-                    </div>
-                </div>
-                <div class="farmer-stats">
-                    <div class="farmer-stat">
-                        <span class="farmer-stat-number">18</span>
-                        <span class="farmer-stat-label">Years Experience</span>
-                    </div>
-                    <div class="farmer-stat">
-                        <span class="farmer-stat-number">9</span>
-                        <span class="farmer-stat-label">Acres Farm</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Harvest Journey -->
-        <div class="timeline-section">
-            <div class="section-title">From Seed to Fruit</div>
-            <div class="section-subtitle">220 days of dedicated care</div>
-            <div class="timeline-card">
-                <div class="timeline-item">
-                    <div class="timeline-icon">🌱</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">January 2024</div>
-                        <h4>Pruning & Growth</h4>
-                        <p>Careful pruning to ensure optimal fruit development and quality</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">💧</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Feb - March 2025</div>
-                        <h4>Precision Care</h4>
-                        <p>32 drip irrigation cycles ensuring perfect moisture and sweetness</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-icon">🔴</div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">March 16, 2025</div>
-                        <h4>Hand Harvested</h4>
-                        <p>Carefully picked at peak ripeness for maximum flavor and nutrition</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sustainability -->
-        <div class="sustainability-section">
-            <div class="sustainability-card">
-                <div class="sustainability-icon">🌍</div>
-                <h3>Sustainable Farming</h3>
-                <p style="color: #666; font-size: 14px; margin-bottom: 20px;">We care for the planet while growing your food</p>
-                <div class="sustainability-features">
-                    <div class="feature-tag">💧 Water Conservation</div>
-                    <div class="feature-tag">♻️ Eco-Friendly</div>
-                    <div class="feature-tag">🌱 Soil Health</div>
-                    <div class="feature-tag">🐝 Pollinator Friendly</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Health Benefits -->
-        <div class="benefits-section">
-            <div class="section-title">Health Benefits</div>
-            <div class="section-subtitle">Nature's powerhouse of nutrients</div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">❤️</div>
-                    <div class="benefit-label">Heart Health</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💪</div>
-                    <div class="benefit-label">Antioxidants</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">⚡</div>
-                    <div class="benefit-label">Energy Boost</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🛡️</div>
-                    <div class="benefit-label">Immunity</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">✨</div>
-                    <div class="benefit-label">Skin Health</div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🧬</div>
-                    <div class="benefit-label">Rich in Vitamins</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Trust Footer -->
-        <div class="trust-footer">
-            <div class="trust-logo">🔴</div>
-            <h3>Humbal Farm</h3>
-            <p>Premium Pomegranates Since 2007</p>
+            <h1 class="text-2xl font-bold mt-4 text-slate-900">Shankarbhai Humbal</h1> [cite: 2, 3]
+            <p class="text-green-700 font-medium italic">Pomegranate Farmer (33 Years Old)</p> [cite: 3]
             
-            <div class="certification-badges">
-                <div class="cert-badge">✓ Quality Assured</div>
-                <div class="cert-badge">✓ Traceable</div>
-                <div class="cert-badge">✓ Sustainable</div>
+            <div class="flex justify-center gap-4 mt-4 py-3 border-t border-b border-stone-100">
+                <div class="text-center">
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">Experience</p>
+                    <p class="font-bold text-slate-700">18 Years</p> [cite: 4]
+                </div>
+                <div class="w-px bg-stone-100"></div>
+                <div class="text-center">
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">Plot Size</p>
+                    <p class="font-bold text-slate-700">9 Acres</p> [cite: 4, 10]
+                </div>
             </div>
+        </div>
 
-            <div class="divider"></div>
-            
-            <p style="font-size: 13px; opacity: 0.7;">From Our Farm to Your Family</p>
-            <div class="footer-support">Proudly supported by <strong>UPL Unimart</strong></div>
+        <div class="bg-white rounded-3xl shadow-md p-6 mb-6">
+            <h2 class="text-lg font-bold text-slate-900 mb-3 flex items-center">
+                <i class="fa-solid fa-leaf text-green-600 mr-2"></i> My Story
+            </h2>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                I have seen the highs and lows of rural life[cite: 5]. The last year (FY 24) has been prosperous because of great support from UPL Unimart and valued consumers[cite: 6]. 
+            </p>
+            <p class="text-slate-600 text-sm leading-relaxed italic">
+                "Thank you for encouraging me by choosing my farm pomegranates as your first preference. I hope you enjoy the fruit that I have worked hard to provide you with." [cite: 7, 8]
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border-l-4 border-red-500">
+                <p class="text-xs text-slate-400 font-bold uppercase">Variety</p>
+                <p class="text-slate-700 font-semibold">Bhagwa</p> 
+            </div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border-l-4 border-green-500">
+                <p class="text-xs text-slate-400 font-bold uppercase">Location</p>
+                <p class="text-slate-700 font-semibold text-xs">Kutch, Gujarat</p> 
+            </div>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-3xl shadow-lg p-6 mb-6">
+            <h2 class="text-lg font-bold mb-4 flex items-center">
+                <i class="fa-solid fa-calendar-check text-red-400 mr-2"></i> Crop Cycle Details
+            </h2>
+            <div class="space-y-4">
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-slate-400">Pruning Date</span>
+                    <span class="font-mono">09-01-2024</span> 
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-slate-400">Harvesting Date</span>
+                    <span class="font-mono text-green-400 font-bold">16-03-2025</span> 
+                </div>
+                <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                    <div class="bg-green-500 h-full w-full"></div>
+                </div>
+                <p class="text-center text-xs text-slate-400">Total Duration: 220 Days</p> 
+            </div>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-3xl p-6 mb-6">
+            <h2 class="text-blue-900 font-bold mb-2 flex items-center">
+                <i class="fa-solid fa-droplet text-blue-500 mr-2"></i> Drip Irrigation
+            </h2>
+            <ul class="text-sm text-blue-800 space-y-2">
+                <li>• 32 irrigation cycles throughout the season [cite: 11]</li>
+                <li>• 45 minutes per cycle [cite: 11]</li>
+                <li>• 5-6 day intervals [cite: 11]</li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <p class="text-xs text-slate-400 uppercase tracking-widest mb-4 italic">Nurturing the Food Chain</p> [cite: 1]
+            <div class="flex items-center justify-center gap-2 grayscale opacity-70">
+                <span class="text-sm font-bold text-slate-500 tracking-tighter uppercase">UPL Unimart</span> [cite: 6, 15]
+            </div>
+            <p class="mt-8 text-xs text-slate-400">&copy; 2026 To Your Farmer. All rights reserved.</p> [cite: 14]
         </div>
     </div>
+
 </body>
 </html>
-pomegranate_traceability.html
-Displaying pomegranate_traceability.html.
