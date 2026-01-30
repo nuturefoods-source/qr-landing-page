@@ -1,364 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nurture Foods - Farmer Profile</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Nurture Foods - Farmer Profile</title>
 
-    /* RESET */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
 
-    body {
-      background: #ffffff;
-      color: #222;
-      line-height: 1.5;
-    }
+/* ================= RESET ================= */
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    /* HEADER */
+body {
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
 
-    .header {
-      background: url("LP.jpg") center/cover no-repeat;
-      padding: 40px 20px;
-      position: relative;
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
-    }
+/* ================= HEADER ================= */
 
-    /* MAIN CONTAINER */
+.header {
+  position: relative;
+  height: 160px;
+  background-image: url("LP.jpg"); /* Banner Image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
 
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+/* Dark overlay */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
 
-    /* PROFILE SECTION */
+/* Logo */
+.logo {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .profile {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
+/* ================= CONTAINER ================= */
 
-    .profile-card {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-    }
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .profile-img {
-      width: 120px;
-      border-radius: 12px;
-      border: 2px solid #c62828;
-    }
+/* ================= PROFILE ================= */
 
-    .profile-info h2 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+.profile {
+  margin-bottom: 30px;
+}
 
-    .profile-info p {
-      font-size: 14px;
-      color: #444;
-    }
+.profile-card {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
 
-    /* COMMON CARD */
+.profile-img {
+  width: 120px;
+  border-radius: 12px;
+  border: 2px solid #c62828;
+  object-fit: cover;
+}
 
-    .card {
-      border: 2px solid #c62828;
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 25px;
-    }
+.profile-info h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
 
-    .card-title {
-      background: #c62828;
-      color: white;
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
+.profile-info p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
 
-    /* TABLE STYLE */
+/* ================= CARD ================= */
 
-    .info-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
+.card {
+  border: 2px solid #c62828;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
 
-    .info-table td {
-      padding: 6px 0;
-    }
+/* Card Title */
+.card-title {
+  background: #c62828;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
 
-    .info-table td:first-child {
-      font-weight: bold;
-      width: 50%;
-    }
+/* ================= TABLE ================= */
 
-    /* CROP SECTION GRID */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
+.info-table td {
+  padding: 6px 0;
+}
 
-    /* IRRIGATION TABLE */
+.info-table td:first-child {
+  font-weight: bold;
+  width: 50%;
+}
 
-    .irrigation-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
+/* ================= GRID ================= */
 
-    .irrigation-table td {
-      border: 1px solid #c62828;
-      padding: 10px;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
 
-    .irrigation-table td:first-child {
-      font-weight: bold;
-      width: 35%;
-    }
+/* ================= IRRIGATION ================= */
 
-    /* FOOTER IMAGE */
+.irrigation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
 
-    .footer-img {
-      margin-top: 40px;
-      opacity: 0.15;
-    }
+.irrigation-table td {
+  border: 1px solid #c62828;
+  padding: 10px;
+}
 
-    /* DESKTOP RESPONSIVE */
+.irrigation-table td:first-child {
+  font-weight: bold;
+  width: 35%;
+}
 
-    @media (min-width: 768px) {
+/* ================= FOOTER IMAGE ================= */
 
-      .profile {
-        flex-direction: row;
-        align-items: flex-start;
-      }
+.footer-img {
+  margin-top: 40px;
+  opacity: 0.15;
+}
 
-      .profile-card {
-        flex: 2;
-      }
+/* ================= DESKTOP ================= */
 
-      .pomegranate-img {
-        flex: 1;
-      }
+@media (min-width: 768px) {
 
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
+  .profile-card {
+    gap: 25px;
+  }
 
-    }
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-  <div class="header">
-    <div class="logo">
-      nurture.foods
-    </div>
+<div class="header">
+  <div class="logo">
+    nurture.foods
   </div>
+</div>
 
+<!-- ================= MAIN ================= -->
 
-  <!-- MAIN CONTENT -->
+<div class="container">
 
-  <div class="container">
+<!-- ================= PROFILE ================= -->
 
-    <!-- PROFILE -->
+<section class="profile">
 
-    <section class="profile">
+  <div class="profile-card">
 
-      <div class="profile-card">
+    <img 
+      src="ChatGPT Image Jan 30, 2026, 12_24_38 PM.png" 
+      class="profile-img"
+      alt="Farmer"
+    >
 
-        <img src="ChatGPT Image Jan 30, 2026, 12_24_38 PM.png" class="profile-img" alt="Farmer">
+    <div class="profile-info">
 
-        <div class="profile-info">
+      <h2>Shankarbai Humbal</h2>
 
-          <h2>Shankarbai Humbal</h2>
+      <p>
+        Hello, I’m Shankarbai Humbal, a 33-year-old pomegranate farmer.
+        I have been growing pomegranates for 18 years on my 9-acre farm.
+      </p>
 
-          <p>
-            Hello, I’m Shankarbai Humbal, a 33-year-old pomegranate farmer.
-            I have been growing pomegranates for 18 years on my 9-acre farm.
-          </p>
+      <p>
+        FY24 has been especially rewarding thanks to the support of
+        UPL Unimart and our valued consumers.
+      </p>
 
-          <p>
-            FY24 has been especially rewarding thanks to the support of
-            UPL Unimart and our valued consumers.
-          </p>
-
-          <p>
-            Thank you for choosing pomegranates from my farm.
-            Your support motivates me to work towards a more
-            sustainable future in agriculture.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- FARM DETAILS -->
-
-    <section class="card">
-
-      <div class="card-title">Farm Details</div>
-
-      <table class="info-table">
-
-        <tr>
-          <td>Farm Name</td>
-          <td>Humbal Farm</td>
-        </tr>
-
-        <tr>
-          <td>Farm Size</td>
-          <td>9 Acre</td>
-        </tr>
-
-        <tr>
-          <td>District</td>
-          <td>Kutch</td>
-        </tr>
-
-        <tr>
-          <td>State, Country</td>
-          <td>Gujarat, India</td>
-        </tr>
-
-      </table>
-
-    </section>
-
-
-    <!-- GRID SECTION -->
-
-    <div class="grid">
-
-      <!-- CROP INFO -->
-
-      <section class="card">
-
-        <div class="card-title">Crop & Orchard Information</div>
-
-        <table class="info-table">
-
-          <tr>
-            <td>Crop</td>
-            <td>Pomegranate</td>
-          </tr>
-
-          <tr>
-            <td>Variety</td>
-            <td>Bhagwa</td>
-          </tr>
-
-          <tr>
-            <td>Orchard Age</td>
-            <td>9 year</td>
-          </tr>
-
-          <tr>
-            <td>No of plants / Acre</td>
-            <td>400 plants</td>
-          </tr>
-
-        </table>
-
-      </section>
-
-
-      <!-- CROP TIMELINE -->
-
-      <section class="card">
-
-        <div class="card-title">Crop Cycle Timeline</div>
-
-        <table class="info-table">
-
-          <tr>
-            <td>Pruning Date</td>
-            <td>09-01-2024</td>
-          </tr>
-
-          <tr>
-            <td>Harvesting Date</td>
-            <td>16-03-2025</td>
-          </tr>
-
-          <tr>
-            <td>Duration</td>
-            <td>220 days</td>
-          </tr>
-
-        </table>
-
-      </section>
+      <p>
+        Thank you for choosing pomegranates from my farm.
+        Your support motivates me to work towards a more
+        sustainable future in agriculture.
+      </p>
 
     </div>
 
-
-    <!-- IRRIGATION -->
-
-    <section class="card">
-
-      <div class="card-title">Drip Irrigation Schedule</div>
-
-      <table class="irrigation-table">
-
-        <tr>
-          <td>No of Irrigation</td>
-          <td>
-            32 irrigation cycles throughout the growing season
-            for 45 minutes each time
-          </td>
-        </tr>
-
-        <tr>
-          <td>Interval</td>
-          <td>5–6 days intervals</td>
-        </tr>
-
-      </table>
-
-    </section>
-
-
-    <!-- FOOTER IMAGE -->
-
-    <img src="Gemini_Generated_Image_z5y213z5y213z5y2.png" class="footer-img" alt="Pomegranate">
-
   </div>
+
+</section>
+
+<!-- ================= FARM DETAILS ================= -->
+
+<section class="card">
+
+  <div class="card-title">Farm Details</div>
+
+  <table class="info-table">
+
+    <tr>
+      <td>Farm Name</td>
+      <td>Humbal Farm</td>
+    </tr>
+
+    <tr>
+      <td>Farm Size</td>
+      <td>9 Acre</td>
+    </tr>
+
+    <tr>
+      <td>District</td>
+      <td>Kutch</td>
+    </tr>
+
+    <tr>
+      <td>State, Country</td>
+      <td>Gujarat, India</td>
+    </tr>
+
+  </table>
+
+</section>
+
+<!-- ================= GRID ================= -->
+
+<div class="grid">
+
+<!-- ================= CROP INFO ================= -->
+
+<section class="card">
+
+  <div class="card-title">Crop & Orchard Information</div>
+
+  <table class="info-table">
+
+    <tr>
+      <td>Crop</td>
+      <td>Pomegranate</td>
+    </tr>
+
+    <tr>
+      <td>Variety</td>
+      <td>Bhagwa</td>
+    </tr>
+
+    <tr>
+      <td>Orchard Age</td>
+      <td>9 year</td>
+    </tr>
+
+    <tr>
+      <td>No of plants / Acre</td>
+      <td>400 plants</td>
+    </tr>
+
+  </table>
+
+</section>
+
+<!-- ================= TIMELINE ================= -->
+
+<section class="card">
+
+  <div class="card-title">Crop Cycle Timeline</div>
+
+  <table class="info-table">
+
+    <tr>
+      <td>Pruning Date</td>
+      <td>09-01-2024</td>
+    </tr>
+
+    <tr>
+      <td>Harvesting Date</td>
+      <td>16-03-2025</td>
+    </tr>
+
+    <tr>
+      <td>Duration</td>
+      <td>220 days</td>
+    </tr>
+
+  </table>
+
+</section>
+
+</div>
+
+<!-- ================= IRRIGATION ================= -->
+
+<section class="card">
+
+  <div class="card-title">Drip Irrigation Schedule</div>
+
+  <table class="irrigation-table">
+
+    <tr>
+      <td>No of Irrigation</td>
+      <td>
+        32 irrigation cycles throughout the growing season
+        for 45 minutes each time
+      </td>
+    </tr>
+
+    <tr>
+      <td>Interval</td>
+      <td>5–6 days intervals</td>
+    </tr>
+
+  </table>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<img 
+  src="Gemini_Generated_Image_z5y213z5y213z5y2.png"
+  class="footer-img"
+  alt="Pomegranate"
+>
+
+</div>
 
 </body>
 </html>
